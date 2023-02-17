@@ -5,6 +5,7 @@ import RestaurantFinder from "../apis/RestaurantFinder";
 import StarRating from "../components/StarRating";
 import Reviews from "../components/Reviews";
 import AddReview from "../components/AddReviews";
+import "./RestaurantDetailPage.css";
 
 const RestaurantDetailPage = () => {
   const { id } = useParams();
@@ -29,9 +30,12 @@ const RestaurantDetailPage = () => {
     <div>
       {selectedRestaurant && (
         <>
-          <h1 className="text-center display-1">
-            {selectedRestaurant.restaurant.name}
-          </h1>
+          <div className="detail-heading">
+            <img src={selectedRestaurant.restaurant.image_url}></img>
+            <h1 className="detail-heading">
+              {selectedRestaurant.restaurant.name}
+            </h1>
+          </div>
           <div className="text-center">
             <StarRating rating={selectedRestaurant.restaurant.average_rating} />
             <span className="text-warning ml-1">

@@ -1,3 +1,7 @@
 h1 {
-    background-color: black
+    color: white;
+        background-color: black;
+        font-family: "Sofia", sans-serif;
+            text-align: center;
 }
+
