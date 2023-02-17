@@ -3,6 +3,10 @@
   background-color: black;
 }
 
+.container1 {
+  background-color:white;
+  margin: 5px
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
