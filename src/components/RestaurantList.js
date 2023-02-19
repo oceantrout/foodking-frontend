@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
 import { useHistory } from "react-router-dom";
@@ -6,6 +6,7 @@ import StarRating from "./StarRating";
 
 const RestaurantList = (props) => {
   const { restaurants, setRestaurants } = useContext(RestaurantsContext);
+
   let history = useHistory();
   useEffect(() => {
     const fetchData = async () => {
@@ -48,7 +49,7 @@ const RestaurantList = (props) => {
     }
     return (
       <>
-        <StarRating rating={restaurant.id} />
+        <StarRating rating={restaurant.average_rating} />
         <span className="text-warning ml-1">({restaurant.count})</span>
       </>
     );
@@ -60,12 +61,13 @@ const RestaurantList = (props) => {
         <thead>
           <tr className="bg-info">
             <th scope="col">Restaurant</th>
-            <th scope="col">Picture</th>
+            <th scope="col"></th>
+            <th scope="col">Type</th>
             <th scope="col">Location</th>
             <th scope="col">Price Range</th>
             <th scope="col">Ratings</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+            {/* <th scope="col">Edit</th>
+            <th scope="col">Delete</th> */}
           </tr>
         </thead>
         <tbody>
@@ -78,22 +80,20 @@ const RestaurantList = (props) => {
                   }
                   key={restaurant.restaurant_id}
                 >
-                  <td>
-                    {restaurant.name}
-                    <br></br>
-                    {restaurant.type_of_food}
-                  </td>
+                  <td>{restaurant.name}</td>
+
                   <td>
                     <img
                       src={restaurant.image_url}
-                      width="100px"
-                      height="100px"
+                      width="120px"
+                      height="120px"
                     ></img>
                   </td>
+                  <td>{restaurant.type_of_food}</td>
                   <td>{restaurant.location}</td>
                   <td>{"$".repeat(restaurant.price_range)}</td>
                   <td>{renderRating(restaurant)}</td>
-                  <td>
+                  {/* <td>
                     <button
                       onClick={(e) => handleUpdate(e, restaurant.restaurant_id)}
                       className="btn btn-warning"
@@ -108,7 +108,7 @@ const RestaurantList = (props) => {
                     >
                       Delete
                     </button>
-                  </td>
+                  </td> */}
                 </tr>
               );
             })}

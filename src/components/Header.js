@@ -3,13 +3,16 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <div>
-      <h1>
-        <img src="/logo.jpg" width="100px" height="100px"></img>
-        <a className="heading-text">Food King </a> <br></br>
-        <h4>Discover a unique makan experience in Singapore</h4>
-        <br></br>
-      </h1>
+    <div className="header1">
+      <img src="/logo.jpg" width="100px" height="100px"></img>
+      <a className="heading-text">Food King </a> <br></br>
+      <a className="subheading">
+        Discover a unique makan experience in Singapore
+      </a>
+      <br></br>
+      <a className="subheading2" href="/">
+        retrun to home
+      </a>
     </div>
   );
 };
