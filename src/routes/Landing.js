@@ -7,8 +7,12 @@ import React from "react";
 function Landing() {
   return (
     <div className="Canvas">
-      <Button className="button1">Log in</Button>
-      <Button className="button1">Sign up</Button>
+      <Link to="/Login">
+        <Button className="button1">Log in</Button>
+      </Link>
+      <Link to="/Register">
+        <Button className="button1">Sign up</Button>
+      </Link>
       <Link to="/Admin">
         <Button className="button1">Admin</Button>
       </Link>

@@ -9,6 +9,9 @@ import UpdatePage from "./routes/UpdatePage";
 import RestaurantDetailPage from "./routes/RestaurantDetailPage";
 import { RestaurantsContextProvider } from "./context/RestaurantsContext";
 import AdminRestaurant from "./routes/AdminRestaurant";
+import Login from "./routes/Login";
+import Register from "./routes/Register";
+
 const App = () => {
   return (
     <RestaurantsContextProvider>
@@ -16,9 +19,10 @@ const App = () => {
         <Router>
           <Switch>
             <Route exact path="/" component={LandingPage} />
-            {/* <Route path="/Login" component={Login} />
-            <Route path="/Register" component={Register} /> */}
             <Route exact path="/Home" component={Home} />
+            <Route exact path="/Login" component={Login} />
+            <Route exact path="/Register" component={Register} />
+
             <Route exact path="/Admin" component={AdminRestaurant} />
             <Route
               exact
