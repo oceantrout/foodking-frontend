@@ -10,6 +10,9 @@ const UpdateRestaurant = (props) => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [priceRange, setPriceRange] = useState("");
+  const [address, setAddress] = useState("");
+  const [image_url, setImage] = useState("");
+  const [type_of_food, setFood] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,6 +21,9 @@ const UpdateRestaurant = (props) => {
       setName(response.data.data.restaurant.name);
       setLocation(response.data.data.restaurant.location);
       setPriceRange(response.data.data.restaurant.price_range);
+      setAddress(response.data.data.restaurant.address);
+      setImage(response.data.data.restaurant.image_url);
+      setFood(response.data.data.restaurant.type_of_food);
     };
 
     fetchData();
@@ -28,9 +34,13 @@ const UpdateRestaurant = (props) => {
     const updatedRestaurant = await RestaurantFinder.put(`/${id}`, {
       name,
       location,
+      address,
+      image_url,
       price_range: priceRange,
+      type_of_food,
     });
-    history.push("/");
+    history.push("/Admin");
+    alert("Update the resturant info");
   };
 
   return (
@@ -53,6 +63,36 @@ const UpdateRestaurant = (props) => {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             id="location"
+            className="form-control"
+            type="text"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="address">Address</label>
+          <input
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            id="address"
+            className="form-control"
+            type="text"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="image_url">image link</label>
+          <input
+            value={image_url}
+            onChange={(e) => setImage(e.target.value)}
+            id="image_url"
+            className="form-control"
+            type="text"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="type_of_food">Type of food</label>
+          <input
+            value={type_of_food}
+            onChange={(e) => setFood(e.target.value)}
+            id="type_of_food"
             className="form-control"
             type="text"
           />
