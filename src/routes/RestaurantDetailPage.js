@@ -5,7 +5,7 @@ import RestaurantFinder from "../apis/RestaurantFinder";
 import StarRating from "../components/StarRating";
 import Reviews from "../components/Reviews";
 import AddReview from "../components/AddReviews";
-//import "./RestaurantDetailPage.css";
+import "./RestaurantDetailPage.css";
 
 const RestaurantDetailPage = () => {
   const { id } = useParams();
@@ -29,7 +29,7 @@ const RestaurantDetailPage = () => {
   return (
     <div>
       {selectedRestaurant && (
-        <>
+        <div className="detailed">
           <div className="detail-heading">
             <img src={selectedRestaurant.restaurant.image_url}></img>
             <h1 className="detail-heading">
@@ -48,7 +48,7 @@ const RestaurantDetailPage = () => {
             <Reviews reviews={selectedRestaurant.reviews} />
           </div>
           <AddReview />
-        </>
+        </div>
       )}
     </div>
   );

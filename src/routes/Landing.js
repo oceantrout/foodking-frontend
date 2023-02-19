@@ -13,7 +13,7 @@ function Landing() {
       <Link to="/Register">
         <Button className="button1">Sign up</Button>
       </Link>
-      <Link to="/Admin">
+      <Link to="/AdminLogin">
         <Button className="button1">Admin</Button>
       </Link>
       <img src="/logo.jpg" height="100px"></img>

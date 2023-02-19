@@ -1,12 +1,16 @@
 import React, { useEffect, useContext, useState } from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { RestaurantsContext } from "../context/RestaurantsContext";
+import { useLocalStorage } from "@har4s/use-local-storage";
+import "./list.css";
 import { useHistory } from "react-router-dom";
 import StarRating from "./StarRating";
 
 const AdminList = (props) => {
   const { restaurants, setRestaurants } = useContext(RestaurantsContext);
+  const [uid, setUid] = useLocalStorage("UID");
 
+  let clientTime = new Date().toLocaleString();
   let history = useHistory();
   useEffect(() => {
     const fetchData = async () => {
@@ -57,6 +61,9 @@ const AdminList = (props) => {
 
   return (
     <div className="list-group">
+      <span className="bg-info">
+        Current logged user: {uid}, {clientTime}
+      </span>
       <table className="table table-hover table-dark">
         <thead>
           <tr className="bg-info">

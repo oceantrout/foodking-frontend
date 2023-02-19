@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
 import { useLocation, useParams, useHistory } from "react-router-dom";
-
+import "../routes/RestaurantDetailPage.css";
 const AddReview = () => {
   const { id } = useParams();
   const location = useLocation();
