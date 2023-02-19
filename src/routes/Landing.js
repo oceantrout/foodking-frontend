@@ -9,6 +9,9 @@ function Landing() {
     <div className="Canvas">
       <Button className="button1">Log in</Button>
       <Button className="button1">Sign up</Button>
+      <Link to="/Admin">
+        <Button className="button1">Admin</Button>
+      </Link>
       <img src="/logo.jpg" height="100px"></img>
       <div className="nav">
         <span className="text">Food King</span>
