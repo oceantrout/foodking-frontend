@@ -1,7 +1,18 @@
-h1 {
+.header1 {
     color: white;
         background-color: black;
-        font-family: "Sofia", sans-serif;
-            text-align: center;
+        text-align: center;
+        font-size: 40px;
+                    font-family: "Sofia", sans-serif;
 }
 
+.subheading {
+    font-size: 20px;
+            font-family: "Sofia", sans-serif;
+}
+
+.subheading2 {
+    font-size: 20px ;
+        font-family: "Sofia", sans-serif;    
+        text-align: left;
+}

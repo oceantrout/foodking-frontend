@@ -9,13 +9,13 @@ function Landing() {
     <div className="Canvas">
       <Button className="button1">Log in</Button>
       <Button className="button1">Sign up</Button>
+      <img src="/logo.jpg" height="100px"></img>
       <div className="nav">
         <span className="text">Food King</span>
-        <img src="/logo.jpg" height="300px"></img>
+        <Link to="/Home">
+          <Button className="button2">Let us Explore</Button>
+        </Link>
       </div>
-      <Link to="/Home">
-        <h2 class="h1-1">Let us Explore</h2>
-      </Link>
     </div>
   );
 }

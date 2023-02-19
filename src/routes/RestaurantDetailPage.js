@@ -5,7 +5,7 @@ import RestaurantFinder from "../apis/RestaurantFinder";
 import StarRating from "../components/StarRating";
 import Reviews from "../components/Reviews";
 import AddReview from "../components/AddReviews";
-import "./RestaurantDetailPage.css";
+//import "./RestaurantDetailPage.css";
 
 const RestaurantDetailPage = () => {
   const { id } = useParams();
