@@ -10,6 +10,8 @@ import RestaurantDetailPage from "./routes/RestaurantDetailPage";
 import { RestaurantsContextProvider } from "./context/RestaurantsContext";
 import AdminRestaurant from "./routes/AdminRestaurant";
 import Login from "./routes/Login";
+import AdminLogin from "./routes/AdminLogin";
+
 import Register from "./routes/Register";
 
 const App = () => {
@@ -21,6 +23,8 @@ const App = () => {
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/Home" component={Home} />
             <Route exact path="/Login" component={Login} />
+            <Route exact path="/AdminLogin" component={AdminLogin} />
+
             <Route exact path="/Register" component={Register} />
 
             <Route exact path="/Admin" component={AdminRestaurant} />
